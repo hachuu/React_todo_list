@@ -23,3 +23,15 @@
 .todos-wrapper {
   min-height: 5rem;
 }
+
+@media screen and (max-width:768px) {
+  .todo-list-template {
+    width: 100%;
+  }
+  .title {
+    align-items: center;
+  }
+  .form-wrapper {
+    width: 90%;
+  }
+}

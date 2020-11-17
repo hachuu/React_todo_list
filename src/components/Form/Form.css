@@ -26,3 +26,18 @@
 .create-button:hover {
   background: #3bc9db;
 }
+
+@media screen and (max-width:768px) {
+  .form {
+    width: 100%;
+  }
+  .form input {
+    width: 100%;
+  }
+  .create-button {
+    display: flex;
+    padding-right: 1rem;
+    border-radius: 3px;
+    justify-content: center;
+  }
+}
