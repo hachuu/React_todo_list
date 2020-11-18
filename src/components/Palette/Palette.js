@@ -1,11 +1,22 @@
-import React from 'react';
-class TodoItemList extends Component {
+import React, { Component } from 'react';
+class Palette extends Component {
     render() {
-        const Palette = ({colors, selectColor}) => {
-            
-        }
+        const { colors, selectColor } = this.props;
+        const colorList = colors.map(
+            (color) => (
+                <option className="color"
+                    {...color}
+                    key={color.id}
+                    style={Object.assign({color: color.value})}
+                >
+                    {color.value}
+                </option>
+            )
+        );
         return (
-            <div></div>
+            <select>
+                {colorList}
+            </select>
         );
     }
 }
