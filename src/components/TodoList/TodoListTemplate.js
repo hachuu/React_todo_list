@@ -2,7 +2,7 @@ import React from 'react';
 import Palette from '../Palette/Palette';
 import './TodoListTemplate.css';
 
-const TodoListTemplate = ({form, children}) => {
+const TodoListTemplate = ({form, children, onChange}) => {
 
   const today = new Date();
   const year = today.getFullYear();
@@ -21,7 +21,7 @@ const TodoListTemplate = ({form, children}) => {
       <div className="title">
         {todate} To do List
       </div>
-      <Palette colors={colors} selectColor=""></Palette>
+      <Palette colors={colors} onChange={onChange}></Palette>
       <section className="form-wrapper">
         {form}
       </section>

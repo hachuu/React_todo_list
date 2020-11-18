@@ -8,11 +8,12 @@ class App extends Component {
   state = {
     input: '',
     todos: [
-      { id: 0, text: ' 메일 확인', checked: false },
-      { id: 1, text: ' 레드마인 확인', checked: false },
-      { id: 2, text: ' 영어단어 정리', checked: false },
-      { id: 3, text: ' GitHub 체크', checked: false }
-    ]
+      { id: 0, text: '메일 확인', checked: false },
+      { id: 1, text: '레드마인 확인', checked: false },
+      { id: 2, text: '영어단어 정리', checked: false },
+      { id: 3, text: 'GitHub 체크', checked: false }
+    ],
+    color: ''
   }
   id = 4;
 
@@ -69,25 +70,35 @@ class App extends Component {
     });
   }
 
+  handleColor = (colour) => {
+    const { color } = this.state;
+    this.setState({
+      color: colour.target.value
+    });
+    console.log(colour.target.value);
+  }
+
   render() {
-    const { input, todos } = this.state;
+    const { input, todos, color } = this.state;
     const {
       handleChange,
       handleCreate,
       handleKeyPress,
       handleToggle,
-      handleRemove
+      handleRemove,
+      handleColor
     } = this;
 
     return (
       <TodoListTemplate form={(
         <Form 
           value={input}
+          color={color}
           onKeyPress={handleKeyPress}
           onChange={handleChange}
           onCreate={handleCreate}
         />
-      )}>
+      )} onChange={handleColor}>
         <TodoItemList todos={todos} onToggle={handleToggle} onRemove={handleRemove}/>
       </TodoListTemplate>
     );
