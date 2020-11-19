@@ -18,3 +18,12 @@ React Todo List
 7. handleCreate 에서 새 Todo 를 만들 때 color 값을 집어넣도록 설정하세요
 8. Form 의 input 텍스트가 현재 선택된 색으로 보여지게 하세요
 9. TodoItem 이 렌더링 될 때 텍스트를 주어진 색으로 보여지게 하세요
+
+
+### 의도한 바와 비교해보기
+make palette section in todoItemList.js
+App.js color define
+make color div array
+make palete array by color array
+change palette color background
+when palette is clicked input text color is changed
