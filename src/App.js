@@ -27,16 +27,20 @@ class App extends Component {
 
   handleCreate = () => {
     const { input, todos, color } = this.state;
-    this.setState({
-      input: '', // 인풋 비우고
-      // concat 을 사용하여 배열에 추가
-      todos: todos.concat({
-        id: this.id++,
-        text: input,
-        checked: false,
-        color
-      })
-    });
+    if (!!input) {
+      this.setState({
+        input: '', // 인풋 비우고
+        // concat 을 사용하여 배열에 추가
+        todos: todos.concat({
+          id: this.id++,
+          text: input,
+          checked: false,
+          color
+        })
+      });
+    } else {
+      alert('input에 입력값을 넣어주세요');
+    }
   }
 
   handleKeyPress = (e) => {
