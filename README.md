@@ -21,9 +21,9 @@ React Todo List
 
 
 ### 의도한 바와 비교해보기
-make palette section in todoItemList.js
-App.js color define
-make color div array
-make palete array by color array
-change palette color background
-when palette is clicked input text color is changed
+1. make palette section in todoItemList.js
+2. App.js color define
+3. make color div array
+4. make palete array by color array
+5. change palette color background
+6. when palette is clicked input text color is changed
