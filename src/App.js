@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import TodoListTemplate from './components/TodoList/TodoListTemplate';
 import Form from './components/Form/Form';
 import TodoItemList from './components/TodoItemList/TodoItemList';
+import Palette from './components/Palette/Palette';
+
+const colors = ['#343a40', '#f03e3e', '#12b886', '#228ae6'];
 
 class App extends Component {
   
@@ -13,10 +16,9 @@ class App extends Component {
       { id: 2, text: '영어단어 정리', checked: false },
       { id: 3, text: 'GitHub 체크', checked: false }
     ],
-    color: ''
   }
   id = 4;
-
+  
   handleChange = (e) => {
     this.setState({
       input: e.target.value // input 의 다음 바뀔 값
@@ -24,14 +26,15 @@ class App extends Component {
   }
 
   handleCreate = () => {
-    const { input, todos } = this.state;
+    const { input, todos, color } = this.state;
     this.setState({
       input: '', // 인풋 비우고
       // concat 을 사용하여 배열에 추가
       todos: todos.concat({
         id: this.id++,
         text: input,
-        checked: false
+        checked: false,
+        color
       })
     });
   }
@@ -70,12 +73,10 @@ class App extends Component {
     });
   }
 
-  handleColor = (colour) => {
-    const { color } = this.state;
+  handleSelectColor = (color) => {
     this.setState({
-      color: colour.target.value
-    });
-    console.log(colour.target.value);
+      color
+    })
   }
 
   render() {
@@ -86,7 +87,7 @@ class App extends Component {
       handleKeyPress,
       handleToggle,
       handleRemove,
-      handleColor
+      handleSelectColor
     } = this;
 
     return (
@@ -98,7 +99,10 @@ class App extends Component {
           onChange={handleChange}
           onCreate={handleCreate}
         />
-      )} onChange={handleColor}>
+      )}
+        palette={(
+          <Palette colors={colors} selected={color} onSelect={handleSelectColor}/>
+        )}>
         <TodoItemList todos={todos} onToggle={handleToggle} onRemove={handleRemove}/>
       </TodoListTemplate>
     );
