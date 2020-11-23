@@ -25,6 +25,12 @@ class App extends Component {
     });
   }
 
+  
+  /* 
+  배열에 항목 추가하는방법
+  1. spread  연산자 [...];
+  2. concat
+  */
   handleCreate = () => {
     const { input, todos, color } = this.state;
     if (!!input) {
