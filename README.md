@@ -9,9 +9,8 @@ React Todo List
 2. npm run deploy
 
 ## 추가 작업해야할 것
-Blabk
-
-
+- React : Instagram clone cording
+- [참조](https://velog.io/@eunsonny/React-Instagram-clone-cording)
 
 ### 의도한 바와 비교해보기
 1. make palette section in todoItemList.js
