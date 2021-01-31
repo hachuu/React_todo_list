@@ -12,7 +12,7 @@ class App extends Component {
     input: '',
     todos: [
       { id: 0, text: '메일 확인', checked: false },
-      { id: 1, text: 'shipgo/www git pull, git check', checked: false },
+      { id: 1, text: '소스 git pull, git check', checked: false },
       { id: 2, text: '소스 리팩토링/공부', checked: false },
       { id: 3, text: 'react admin ', checked: false }
     ],
